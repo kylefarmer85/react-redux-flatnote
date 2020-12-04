@@ -29,8 +29,8 @@ class Login extends Component {
 
     fetch("http://localhost:3000/api/v1/users", reqObj)
     .then(resp => resp.json())
-    .then(user => {
-      this.props.loginSuccess(user)
+    .then(data => {
+      this.props.loginSuccess(data)
       this.props.history.push('/notes')
     })
 

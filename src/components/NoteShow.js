@@ -34,7 +34,8 @@ class NoteShow extends Component {
     })
     .then(resp => resp.json())
     .then(deletedNote => {
-      this.props.deleteNote(id)
+    
+      this.props.deleteNote(deletedNote.id)
       this.props.history.push('/notes')
       alert(`${deletedNote.title} was deleted.`)
     })

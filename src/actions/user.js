@@ -1,7 +1,7 @@
-export const loginSuccess = user => {
+export const loginSuccess = data => {
   return {
     type: 'LOGIN_SUCCESS',
-    user
+    data
   }
 }
 

@@ -2,7 +2,7 @@ const userReducer = (state = null, action) => {
   switch(action.type) {
 
     case 'LOGIN_SUCCESS':
-      return action.user
+      return action.data.user
 
     case 'LOGOUT_USER':
       return null
