@@ -7,10 +7,6 @@ const Nav = () => {
     color: 'white'
   }
 
-  // const renderLinks = () => {
-  //   only let links show up if logged in
-  // }
-
   return (
     <nav>
       <ul className='nav-links'>
