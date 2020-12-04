@@ -4,7 +4,8 @@ const notesReducer = (state = [], action) => {
     case 'LOGIN_SUCCESS':
     return action.user.notes
     
-
+    case 'SHOW_NOTE':
+      
     default:
       return state
   }

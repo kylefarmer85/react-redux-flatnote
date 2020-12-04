@@ -5,14 +5,14 @@ export const addNote = note => {
   }
 }
 
-export const updateNote = note => {
+export const updateNote = id => {
   return {
     type: 'UPDATE_NOTE',
     id
   }
 }
 
-export const deleteNote = note => {
+export const deleteNote = id => {
   return {
     type: 'DELETE_NOTE',
     id

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { getCurrentUser } from '../actions/user'
+import { loginSuccess } from '../actions/user'
+import { Link } from 'react-router-dom'
 
 class Login extends Component {
     state = {
@@ -29,7 +30,8 @@ class Login extends Component {
     fetch("http://localhost:3000/api/v1/users", reqObj)
     .then(resp => resp.json())
     .then(user => {
-      this.props.getCurrentUser(user)
+      this.props.loginSuccess(user)
+      this.props.history.push('/notes')
     })
 
     this.setState({
@@ -43,6 +45,7 @@ class Login extends Component {
         <form onSubmit={this.handleSubmit}>
          <input type='text' name='username' onChange={this.handleChange} value={this.state.username} />
          <input type='submit' />
+ 
         </form>
       </div>
     );
@@ -51,4 +54,4 @@ class Login extends Component {
 
 
 
-export default connect(null, {getCurrentUser}) (Login);
+export default connect(null, {loginSuccess}) (Login);

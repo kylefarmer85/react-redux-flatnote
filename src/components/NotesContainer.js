@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { Component }  from 'react';
 import { connect } from 'react-redux'
 import Note from './Note'
+import { Card } from 'semantic-ui-react'
 
 const NotesContainer = (props) => {
 
@@ -10,12 +11,13 @@ const NotesContainer = (props) => {
     })
   }
 
-  return (
-    <div>
-      { renderNotes() }
-    </div>
-  );
-}
+    return (
+      <Card.Group itemsPerRow={2}>
+        { renderNotes() }
+      </Card.Group>
+    );
+  }
+
 
 const mapStateToProps = (state) => {
   return {
@@ -24,3 +26,5 @@ const mapStateToProps = (state) => {
 }
 
 export default connect(mapStateToProps, null) (NotesContainer);
+
+
