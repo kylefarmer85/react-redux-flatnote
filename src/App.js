@@ -17,7 +17,6 @@ function App() {
         {/* <NotesContainer /> */}
         <Switch>
 
-          <Route exact path ='/signout' />
           <Route exact path ='/notes' component={NotesContainer} />
           <Route exact path ='/notes/new' component={NewNote}/>
           <Route exact path ='/notes/:id'component={NoteShow} />

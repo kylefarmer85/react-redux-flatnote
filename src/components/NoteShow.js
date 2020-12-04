@@ -16,6 +16,10 @@ class NoteShow extends Component {
 
 
   componentDidMount() {
+    this.props.notes ? this.setState({
+      note: this.props.notes.find(n => n.id == this.state.id)
+    }) :
+    
     fetch(`http://localhost:3000/api/v1/notes/${this.state.id}`)
     .then(resp => resp.json())
     .then(showNote => {
@@ -55,7 +59,13 @@ class NoteShow extends Component {
   }
 }
 
-export default connect(null, {deleteNote})(NoteShow)
+const mapStateToProps = (state) => {
+  return {
+    notes: state.notes
+  }
+}
+
+export default connect(mapStateToProps, {deleteNote})(NoteShow)
 
 
 

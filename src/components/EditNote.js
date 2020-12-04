@@ -47,14 +47,8 @@ class EditNote extends Component {
   render() {
     return (
     <Form className='new-user-form' onSubmit={this.handleSubmit}>
-      <Form.Field>
-        <label>Note Title</label>
-        <input type="text" name="title" value={this.state.title} onChange={this.handleChange}></input>
-      </Form.Field>
-      <Form.Field>
-        <label>Note Content</label>
-        <input type="text" name="content" value={this.state.content} onChange={this.handleChange}></input>
-      </Form.Field>
+      <Form.Field label="Note Title" control="input" name="title" value={this.state.title} onChange={this.handleChange}/>
+      <Form.Field label='Note Content' control="textarea" name="content" value={this.state.content} onChange={this.handleChange}/>
       <Button type='submit'>Submit</Button>
     </Form>
     );

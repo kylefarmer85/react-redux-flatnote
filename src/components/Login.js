@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { loginSuccess } from '../actions/user'
-import { Link } from 'react-router-dom'
 
 class Login extends Component {
     state = {
@@ -52,6 +51,11 @@ class Login extends Component {
   }
 }
 
+const mapStateToProps = (state) => {
+  return {
+    user: state.user
+  }
+}
 
 
-export default connect(null, {loginSuccess}) (Login);
+export default connect(mapStateToProps, { loginSuccess }) (Login);

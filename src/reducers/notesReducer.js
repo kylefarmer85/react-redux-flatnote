@@ -16,6 +16,8 @@ const notesReducer = (state = [], action) => {
       updatedNotes = state.filter(note => note.id !== action.id)
       return updatedNotes
 
+    case 'LOGOUT_USER':
+      return []  
 
     default:
       return state

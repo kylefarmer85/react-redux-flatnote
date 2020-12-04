@@ -1,8 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
+import { connect } from 'react-redux'
+import { logoutUser } from '../actions/user'
 
 
-const Nav = () => {
+const Nav = (props) => {
 
   const navStyle = {
     color: 'white'
@@ -14,7 +16,7 @@ const Nav = () => {
         <Link style={navStyle} to={'/notes/new'}>
         <li>New Note</li>
         </Link>
-        <Link style={navStyle} to={'/signout'}>
+        <Link style={navStyle} to={'/login'} onClick={props.logoutUser}>
         <li>Sign Out</li>
         </Link>
       </ul>
@@ -22,4 +24,4 @@ const Nav = () => {
   );
 }
 
-export default Nav;
+export default connect(null, { logoutUser }) (Nav);
