@@ -12,7 +12,7 @@ const Note = (props) => {
       <Card.Header><h3>{title}</h3></Card.Header>
       <Card.Content>{content}</Card.Content>
       <Button onClick={() => history.push(`/notes/${id}`) }>View</Button>
-      <Button as={Link} to={{pathname: `/notes/${id}/edit`, noteProps:{note: props}}}>Edit</Button>
+      <Button as={Link} to={`/notes/${id}/edit`}>Edit</Button>
     </Card>
   );
 }

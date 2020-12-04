@@ -6,18 +6,16 @@ import { deleteNote } from '../actions/notes'
 
 
 class NoteShow extends Component {
-  constructor(props){
-    super()
-    this.state = {
-      id: props.match.params.id,
-      note: {}
-    }
+  state = {
+    id: this.props.match.params.id,
+    note: {}
   }
 
-
-  componentDidMount() {
-    this.props.notes ? this.setState({
-      note: this.props.notes.find(n => n.id == this.state.id)
+  componentDidMount(){
+    this.props.notes ? 
+    
+    this.setState({
+      note: this.props.notes.find(n => n.id === parseInt(this.state.id))
     }) :
     
     fetch(`http://localhost:3000/api/v1/notes/${this.state.id}`)
@@ -39,7 +37,6 @@ class NoteShow extends Component {
       this.props.deleteNote(id)
       this.props.history.push('/notes')
       alert(`${deletedNote.title} was deleted.`)
-      
     })
   }
 
@@ -51,7 +48,7 @@ class NoteShow extends Component {
           <Card.Header><h2>{note.title}</h2></Card.Header>
           <Card.Content>{note.content}</Card.Content>
           <Button onClick={() => this.handleDelete(note.id)}>Delete</Button>
-          <Button as={Link} to={{pathname: `/notes/${note.id}/edit`, noteProps:{note: note}}}>Edit</Button>
+          <Button as={Link} to={`/notes/${note.id}/edit`}>Edit</Button>
           <Button as={Link} to={'/notes'}>Back to Notes</Button>
         </Card>
       </div>

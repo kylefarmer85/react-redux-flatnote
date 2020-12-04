@@ -5,13 +5,31 @@ import { updateNote } from '../actions/notes'
 
 
 class EditNote extends Component {
-  constructor(props){
-    super()
-    const {note} = props.location.noteProps
-    this.state = {
-      title: note.title,
-      content: note.content,
-      id: note.id
+  state = {
+    id: this.props.match.params.id,
+    title: '',
+    content: ''
+  }
+
+  componentDidMount(){
+
+    if (this.props.notes) {
+    const noteToEdit = this.props.notes.find(n => n.id === parseInt(this.state.id))
+      this.setState({
+        title: noteToEdit.title,
+        content: noteToEdit.content
+      })
+
+    } else {
+
+      fetch(`http://localhost:3000/api/v1/notes/${this.state.id}`)
+      .then(resp => resp.json())
+      .then(noteToEdit => {
+        this.setState({
+            title: noteToEdit.title,
+            content: noteToEdit.content
+        })
+      })
     }
   }
 
@@ -46,10 +64,11 @@ class EditNote extends Component {
 
   render() {
     return (
-    <Form className='new-user-form' onSubmit={this.handleSubmit}>
+    <Form className='edit-user-form' onSubmit={this.handleSubmit}>
+      <h1>Edit Note</h1>
       <Form.Field label="Note Title" control="input" name="title" value={this.state.title} onChange={this.handleChange}/>
       <Form.Field label='Note Content' control="textarea" name="content" value={this.state.content} onChange={this.handleChange}/>
-      <Button type='submit'>Submit</Button>
+      <Button type='submit'>Update</Button>
     </Form>
     );
   }
@@ -57,7 +76,8 @@ class EditNote extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    user: state.user
+    user: state.user,
+    notes: state.notes
   }
 }
 

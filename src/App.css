@@ -19,15 +19,12 @@ nav {
   color: white;
 }
 
-.new-user-form {
+.edit-user-form, .new-user-form {
   margin: 4%;
   min-width: 40vw;
 }
 
-/* .note-container {
-  
-  margin: auto;
-  width: 50%;
-  border: 2px solid black;
- 
-} */
+.login-form {
+  margin: 4%;
+  width: 300px
+}

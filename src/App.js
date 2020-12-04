@@ -13,8 +13,6 @@ function App() {
     <Router>
       <div className="App">
         <Nav />
-        {/* include new note and sign out link in nav */}
-        {/* <NotesContainer /> */}
         <Switch>
 
           <Route exact path ='/notes' component={NotesContainer} />
@@ -24,6 +22,7 @@ function App() {
           <Route path ='*' component={Login} />
 
         </Switch>
+       
       </div>
     </Router>
   );
