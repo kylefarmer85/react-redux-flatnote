@@ -42,14 +42,15 @@ class NoteShow extends Component {
   render() {
     const note = this.state.note
     return (
-      <Card style={{textAlign: "center"}}>
-        <h1>NoteShow</h1>
-        <Card.Header>{note.title}</Card.Header>
-        <Card.Content>{note.content}</Card.Content>
-        <Button onClick={() => this.handleDelete(note.id)}>Delete</Button>
-        <Button>Edit</Button>
-        <Button as={Link} to='/notes'>Back to Notes</Button>
-      </Card>
+      <div>
+        <Card>
+          <Card.Header><h2>{note.title}</h2></Card.Header>
+          <Card.Content>{note.content}</Card.Content>
+          <Button onClick={() => this.handleDelete(note.id)}>Delete</Button>
+          <Button as={Link} to={{pathname: `/notes/${note.id}/edit`, noteProps:{note: note}}}>Edit</Button>
+          <Button as={Link} to={'/notes'}>Back to Notes</Button>
+        </Card>
+      </div>
     );
   }
 }

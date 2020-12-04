@@ -1,4 +1,4 @@
-import React, { Component }  from 'react';
+import React from 'react';
 import { connect } from 'react-redux'
 import Note from './Note'
 import { Card } from 'semantic-ui-react'
@@ -16,7 +16,7 @@ const NotesContainer = (props) => {
         { renderNotes() }
       </Card.Group>
     );
-  }
+  } 
 
 
 const mapStateToProps = (state) => {

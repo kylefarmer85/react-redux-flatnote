@@ -19,6 +19,11 @@ nav {
   color: white;
 }
 
+.new-user-form {
+  margin: 4%;
+  min-width: 40vw;
+}
+
 /* .note-container {
   
   margin: auto;

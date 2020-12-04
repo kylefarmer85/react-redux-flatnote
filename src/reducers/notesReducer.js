@@ -3,12 +3,19 @@ const notesReducer = (state = [], action) => {
   switch(action.type) {
 
     case 'LOGIN_SUCCESS':
-    return action.user.notes
+      return action.user.notes
+
+    case 'ADD_NOTE':
+      return [...state, action.note]
+
+    case 'UPDATE_NOTE':
+      updatedNotes = state.map(n => n.id === action.note.id ? action.note : n)
+      return updatedNotes   
     
     case 'DELETE_NOTE':
-      console.log(action)
       updatedNotes = state.filter(note => note.id !== action.id)
       return updatedNotes
+
 
     default:
       return state

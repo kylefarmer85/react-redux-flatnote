@@ -1,15 +1,17 @@
 import React, { Component } from 'react';
 import { Button, Form } from 'semantic-ui-react'
 import { connect } from 'react-redux'
-import { addNote } from '../actions/notes'
+import { updateNote } from '../actions/notes'
 
 
-class NewNote extends Component {
-  constructor(){
+class EditNote extends Component {
+  constructor(props){
     super()
+    const {note} = props.location.noteProps
     this.state = {
-      title: '',
-      content: ''
+      title: note.title,
+      content: note.content,
+      id: note.id
     }
   }
 
@@ -21,9 +23,8 @@ class NewNote extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault()
-    console.log(this.props.user)
     const reqObj = {
-      method: 'POST',
+      method: 'PATCH',
       headers: {
         'Content-Type': 'application/json'
       },
@@ -34,11 +35,11 @@ class NewNote extends Component {
       })
     }
 
-    fetch("http://localhost:3000/api/v1/notes", reqObj)
+    fetch(`http://localhost:3000/api/v1/notes/${this.state.id}`, reqObj)
     .then(resp => resp.json())
-    .then(newNote => {
-      this.props.addNote(newNote)
-      this.props.history.push(`/notes/${newNote.id}`)
+    .then(updatedNote => {
+      this.props.updateNote(updatedNote)
+      this.props.history.push(`/notes/${updatedNote.id}`)
     })
   }
 
@@ -66,4 +67,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps, {addNote})(NewNote);
+export default connect(mapStateToProps, {updateNote})(EditNote);

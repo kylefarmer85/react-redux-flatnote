@@ -5,10 +5,10 @@ export const addNote = note => {
   }
 }
 
-export const updateNote = id => {
+export const updateNote = note => {
   return {
     type: 'UPDATE_NOTE',
-    id
+    note
   }
 }
 
