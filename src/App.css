@@ -23,14 +23,25 @@
   padding: 5%
 }
 
+
+.note-image {
+  padding: 13%;
+  margin-top: 3%;
+  background-image: url("./images/sticky.png");
+  background-repeat: no-repeat;
+  background-position: 50%;
+  min-height: 350px;
+  background-size: contain;
+
+}
+
 .note-show {
   justify-content: center;
-  margin: 20%
+  margin-top: 5%;
 }
 
 .note-buttons {
-  margin-top: 20px;
-  border: black 3px;
+  padding-top: 20%;
 }
 
 .edit-user-form, .new-user-form {

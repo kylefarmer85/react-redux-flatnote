@@ -11,16 +11,14 @@ const Note = (props) => {
   return (
 
     <Card>
-      
-        <Card.Content header={title} />
-        <Card.Content description={content} />
-        <Card.Content extra>
-          <div className='ui two buttons'>
-            <Button onClick={() => history.push(`/notes/${id}`) }>View</Button>
-            <Button primary as={Link} to={`/notes/${id}/edit`}>Edit</Button>
-          </div>
-        </Card.Content>
-     
+      <Card.Content header={title} />
+      <Card.Content description={content} />
+      <Card.Content extra>
+        <div className='ui two buttons'>
+          <Button onClick={() => history.push(`/notes/${id}`) }>View</Button>
+          <Button primary as={Link} to={`/notes/${id}/edit`}>Edit</Button>
+        </div>
+      </Card.Content>
     </Card>
 
   );
