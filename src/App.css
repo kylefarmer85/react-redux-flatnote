@@ -19,43 +19,36 @@
   color: white;
 } */
 
-/* .notes-header {
-  padding: 3%
-} */
-
-
-.note-image {
-  padding: 15% 27% 12% 27%;
-  background-image: url("./images/sticky.png");
-  background-repeat: no-repeat;
-  background-position: 50%;
-  min-height: 300px;
-  min-width: 250px;
-  background-size: contain;
-  box-sizing: border-box;
-  outline: solid;
-
-}
-
-.note-show {
-  padding-top: 2%;
-  outline: solid;
-}
-
-.note-buttons {
-  padding-top: 30%;
-  outline: solid;
-
-}
-
-.edit-user-form, .new-user-form {
-  margin: 8%;
+.notes-header {
+  padding: 2%
 }
 
 .notes-container {
   padding-top: 2%;
   justify-content: center;
-  
+}
+
+.note-image {
+  padding: 13% 27% 10% 27%;
+  background-image: url("./images/sticky.png");
+  background-repeat: no-repeat;
+  background-position: 50%;
+  min-height: 200px;
+  min-width: 200px;
+  background-size: contain;
+}
+
+.note-show {
+  padding: 2% 7%;
+}
+
+
+.note-buttons {
+  padding-top: 27%;
+}
+
+.edit-note-form, .new-note-form {
+  margin: 5% 20%;
 }
 
 .login-form {

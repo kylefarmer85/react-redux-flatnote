@@ -46,7 +46,7 @@ class NewNote extends Component {
 
   render() {
     return (
-    <Form className='new-user-form' onSubmit={this.handleSubmit}>
+    <Form className='new-note-form' onSubmit={this.handleSubmit}>
       <h1>New Note</h1>
       <Form.Field label="Note Title" control="input" name="title" value={this.state.title} onChange={this.handleChange}/>
       <Form.Field label='Note Content' control="textarea" name="content" value={this.state.content} onChange={this.handleChange}/>
