@@ -1,14 +1,17 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
-import { Card, Button } from 'semantic-ui-react'
+import { Button } from 'semantic-ui-react'
 import { connect } from 'react-redux'
 import { deleteNote } from '../actions/notes'
 
 
 class NoteShow extends Component {
-  state = {
-    id: this.props.match.params.id,
-    note: {}
+  constructor(props){
+    super(props)  
+    this.state = {
+      id: this.props.match.params.id,
+      note: {}
+    }
   }
 
   componentDidMount(){
@@ -16,8 +19,8 @@ class NoteShow extends Component {
     
     this.setState({
       note: this.props.notes.find(n => n.id === parseInt(this.state.id))
-    }) :
-    
+    })
+    :
     fetch(`http://localhost:3000/api/v1/notes/${this.state.id}`)
     .then(resp => resp.json())
     .then(showNote => {
@@ -44,15 +47,15 @@ class NoteShow extends Component {
   render() {
     const note = this.state.note
     return (
-      <div>
-        <Card>
-          <Card.Header><h2>{note.title}</h2></Card.Header>
-          <Card.Content>{note.content}</Card.Content>
-          <Button onClick={() => this.handleDelete(note.id)}>Delete</Button>
-          <Button as={Link} to={`/notes/${note.id}/edit`}>Edit</Button>
-          <Button as={Link} to={'/notes'}>Back to Notes</Button>
-        </Card>
+
+      <div className="note-show">
+        <h1>{note.title}</h1>
+        <p>{note.content}</p>
+        <Button primary as={Link} to={`/notes/${note.id}/edit`}>Edit</Button>
+        <Button secondary onClick={() => this.handleDelete(note.id)}>Delete</Button>
+        <Button as={Link} to={'/notes'}>Back to Notes</Button>
       </div>
+   
     );
   }
 }

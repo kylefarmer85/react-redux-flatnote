@@ -2,7 +2,7 @@
   text-align: center;
 }
 
-nav {
+/* nav {
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -17,14 +17,35 @@ nav {
   justify-content: space-around;
   list-style: none;
   color: white;
+} */
+
+.notes-header {
+  padding: 5%
+}
+
+.note-show {
+  justify-content: center;
+  margin: 20%
+}
+
+.note-buttons {
+  margin-top: 20px;
+  border: black 3px;
 }
 
 .edit-user-form, .new-user-form {
-  margin: 4%;
-  min-width: 40vw;
+  margin: 8%;
+
+}
+
+.notes-container {
+  padding-top: 3%;
+  justify-content: center;
+  
 }
 
 .login-form {
-  margin: 4%;
-  width: 300px
+  margin: 10% 35%;
+  text-align: left
 }
+

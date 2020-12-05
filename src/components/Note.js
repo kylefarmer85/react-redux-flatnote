@@ -5,15 +5,24 @@ import { Link } from 'react-router-dom'
 
 const Note = (props) => {
   const {id, title, content} = props
+  // useHistory just to try it out 
   const history = useHistory()
 
   return (
+
     <Card>
-      <Card.Header><h3>{title}</h3></Card.Header>
-      <Card.Content>{content}</Card.Content>
-      <Button onClick={() => history.push(`/notes/${id}`) }>View</Button>
-      <Button as={Link} to={`/notes/${id}/edit`}>Edit</Button>
+      
+        <Card.Content header={title} />
+        <Card.Content description={content} />
+        <Card.Content extra>
+          <div className='ui two buttons'>
+            <Button onClick={() => history.push(`/notes/${id}`) }>View</Button>
+            <Button primary as={Link} to={`/notes/${id}/edit`}>Edit</Button>
+          </div>
+        </Card.Content>
+     
     </Card>
+
   );
 }
 

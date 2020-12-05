@@ -5,21 +5,23 @@ import { updateNote } from '../actions/notes'
 
 
 class EditNote extends Component {
-  state = {
-    id: this.props.match.params.id,
-    title: '',
-    content: ''
+  constructor(props){
+    super(props)
+    this.state = {
+      id: this.props.match.params.id,
+      title: '',
+      content: ''
+    }
   }
 
   componentDidMount(){
-
     if (this.props.notes) {
+
     const noteToEdit = this.props.notes.find(n => n.id === parseInt(this.state.id))
       this.setState({
         title: noteToEdit.title,
         content: noteToEdit.content
       })
-
     } else {
 
       fetch(`http://localhost:3000/api/v1/notes/${this.state.id}`)
@@ -68,7 +70,7 @@ class EditNote extends Component {
       <h1>Edit Note</h1>
       <Form.Field label="Note Title" control="input" name="title" value={this.state.title} onChange={this.handleChange}/>
       <Form.Field label='Note Content' control="textarea" name="content" value={this.state.content} onChange={this.handleChange}/>
-      <Button type='submit'>Update</Button>
+      <Button primary type='submit'>Update</Button>
     </Form>
     );
   }

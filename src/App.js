@@ -6,7 +6,6 @@ import Login from './components/Login'
 import NoteShow from './components/NoteShow'
 import NewNote from './components/NewNote'
 import EditNote from './components/EditNote'
-import 'semantic-ui-css/semantic.min.css'
 
 function App() {
   return (
@@ -21,8 +20,7 @@ function App() {
           <Route exact path ='/notes/:id/edit' component={EditNote} />
           <Route path ='*' component={Login} />
 
-        </Switch>
-       
+        </Switch> 
       </div>
     </Router>
   );

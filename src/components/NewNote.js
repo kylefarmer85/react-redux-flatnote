@@ -13,6 +13,7 @@ class NewNote extends Component {
     }
   }
 
+
   handleChange = (e) => {
     this.setState({
       [e.target.name]: e.target.value
@@ -49,7 +50,7 @@ class NewNote extends Component {
       <h1>New Note</h1>
       <Form.Field label="Note Title" control="input" name="title" value={this.state.title} onChange={this.handleChange}/>
       <Form.Field label='Note Content' control="textarea" name="content" value={this.state.content} onChange={this.handleChange}/>
-      <Button type='submit'>Submit</Button>
+      <Button primary type='submit'>Submit</Button>
     </Form>
     );
   }

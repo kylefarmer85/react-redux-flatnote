@@ -42,8 +42,9 @@ class Login extends Component {
   render() {
     return (
       <Form className="login-form" onSubmit={this.handleSubmit}>
+        <h1>Welcome to FLATNOTE</h1>
         <Form.Field label="User Login" control="input" name="username" value={this.state.username} onChange={this.handleChange} />
-        <Button type='submit'>Login</Button>
+        <Button primary type='submit'>Login</Button>
       </Form> 
     );
   }
