@@ -25,19 +25,19 @@
 
 
 .note-image {
-  padding: 13%;
-  margin-top: 3%;
+  padding: 12%;
   background-image: url("./images/sticky.png");
   background-repeat: no-repeat;
   background-position: 50%;
   min-height: 350px;
+  /* max-height: 575px; */
   background-size: contain;
 
 }
 
 .note-show {
   justify-content: center;
-  margin-top: 5%;
+  margin-top: 2%;
 }
 
 .note-buttons {
