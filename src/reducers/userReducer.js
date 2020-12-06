@@ -9,15 +9,11 @@ const userReducer = (state = { user: null, loading: false}, action) => {
       }
 
     case 'LOGIN_USER':
-  
       return {
         ...state,
         user: action.data.user,
         loading: false
       }  
-
-    // case 'LOGIN_SUCCESS':
-    //   return action.data.user
 
     case 'LOGOUT_USER':
       return {

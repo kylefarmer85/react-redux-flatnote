@@ -17,8 +17,6 @@ const notesReducer = (state = { notes: [], loading: false }, action) => {
         loading: false
       }  
 
-
-
     case 'ADD_NOTE':
       return {
         ...state, 
