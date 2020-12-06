@@ -29,6 +29,7 @@
 }
 
 .note-image {
+  margin-top: 2%;
   padding: 13% 27% 10% 27%;
   background-image: url("./images/sticky.png");
   background-repeat: no-repeat;
