@@ -1,11 +1,26 @@
-const userReducer = (state = null, action) => {
+const userReducer = (state = { user: null, loading: false}, action) => {
   switch(action.type) {
 
-    case 'LOGIN_SUCCESS':
-      return action.data.user
+    case 'START_ADDING_USER_REQUEST':
+      return {
+        ...state,
+        user: state.user,
+        loading: true
+      }
+
+    case 'LOGIN_USER':
+      return {
+        ...state,
+        user: action.data.user,
+        loading: false
+      }  
 
     case 'LOGOUT_USER':
-      return null
+      return {
+        ...state,
+        user: null,
+        loading: true
+      }
       
     default:
       return state

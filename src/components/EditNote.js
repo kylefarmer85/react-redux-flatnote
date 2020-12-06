@@ -16,7 +16,6 @@ class EditNote extends Component {
 
   componentDidMount(){
     if (this.props.notes) {
-
     const noteToEdit = this.props.notes.find(n => n.id === parseInt(this.state.id))
       this.setState({
         title: noteToEdit.title,
@@ -78,8 +77,8 @@ class EditNote extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    user: state.user,
-    notes: state.notes
+    user: state.user.user,
+    notes: state.notes.notes
   }
 }
 
