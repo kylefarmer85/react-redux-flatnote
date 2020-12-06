@@ -13,7 +13,7 @@ const Nav = (props) => {
 
         <Menu.Item as={Link} to={`/notes/new`} name="New Note" />
 
-        <Menu.Item as={Link} to={`/login`} name="Signout" />
+        <Menu.Item onClick={props.logoutUser} as={Link} to={`/login`} name="Signout" />
     </Menu>
   );
 }
