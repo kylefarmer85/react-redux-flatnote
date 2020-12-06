@@ -10,14 +10,12 @@ const NotesContainer = (props) => {
       return props.notes.map(note => {
         return <Note {...note} key={note.id} />
       })
-    } else {
-      return alert("You have no notes. Click New Note to create one!")
     }
   }
 
     return (
       <div>
-        <h1 className="notes-header">{props.user.username}'s Notes</h1>
+        <h1 className="notes-header">{ props.notes.length === 0 ? `${props.user.username}'s Notes` : "Click New Note to create a note." }</h1>
         <Card.Group className="notes-container">
           { renderNotes() }
         </Card.Group>

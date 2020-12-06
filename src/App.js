@@ -8,6 +8,7 @@ import NewNote from './components/NewNote'
 import EditNote from './components/EditNote'
 
 function App() {
+
   return (
     <Router>
       <div className="App">

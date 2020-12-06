@@ -1,9 +1,25 @@
-const notesReducer = (state = [], action) => {
-  let updatedNotes;
-  switch(action.type) {
+const notesReducer = (state = { notes: [], loading: false }, action) => {
 
-    case 'LOGIN_SUCCESS':
-      return action.data.notes
+  let updatedNotes;
+
+  switch(action.type) {
+    case 'START_ADDING_USER_REQUEST':
+      return {
+        ...state,
+        notes: [...state.notes],
+        loading: true
+      }
+
+    case 'LOGIN_USER':
+      return {
+        ...state,
+        notes: action.data.notes,
+        loading: false
+      }  
+
+
+    // case 'LOGIN_SUCCESS':
+    //   return action.data.notes
 
     case 'ADD_NOTE':
       return [...state, action.note]

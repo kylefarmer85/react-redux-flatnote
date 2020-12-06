@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { loginSuccess } from '../actions/user'
+import { fetchUser } from '../actions/user'
 import { Form, Button } from 'semantic-ui-react'
-// import ReactAnimations from './ReactAnimations'
+
 
 
 class Login extends Component {
@@ -18,24 +18,14 @@ class Login extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault()
-
-    const reqObj = {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        username: this.state.username.split(' ').join('').toLowerCase()
-      })
-    }
-
-    fetch("http://localhost:3000/api/v1/users", reqObj)
-    .then(resp => resp.json())
-    .then(data => {
-      this.props.loginSuccess(data)
-      this.props.history.push('/notes')
+    this.setState(prevState => {
+      return {
+        username: prevState.username.split(' ').join('').toLowerCase
+      }
     })
+    this.props.fetchUser(this.state.username)
 
+    this.props.history.push('/notes')
     this.setState({
       username: ''
     })
@@ -59,5 +49,9 @@ const mapStateToProps = (state) => {
   }
 }
 
+function mapDispatchToProps(dispatch){
+  return { fetchUser: (user) => dispatch(fetchUser(user)) }
+}
 
-export default connect(mapStateToProps, { loginSuccess }) (Login);
+
+export default connect(mapStateToProps, mapDispatchToProps) (Login);
