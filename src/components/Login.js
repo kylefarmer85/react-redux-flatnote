@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { loginSuccess } from '../actions/user'
 import { Form, Button } from 'semantic-ui-react'
-// import ReactAnimations from './ReactAnimations'
 
 
 class Login extends Component {

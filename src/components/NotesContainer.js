@@ -15,15 +15,15 @@ const NotesContainer = (props) => {
     }
   }
 
-    return (
-      <div>
-        <h1 className="notes-header">{props.user.username}'s Notes</h1>
-        <Card.Group className="notes-container">
-          { renderNotes() }
-        </Card.Group>
-      </div>
-    );
-  } 
+  return (
+    <div>
+      <h1 className="notes-header">{props.user.username}'s Notes</h1>
+      <Card.Group className="notes-container">
+        { renderNotes() }
+      </Card.Group>
+    </div>
+  );
+} 
 
 
 const mapStateToProps = (state) => {
