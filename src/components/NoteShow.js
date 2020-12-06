@@ -64,7 +64,7 @@ class NoteShow extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    notes: state.notes
+    notes: state.notes.notes
   }
 }
 

@@ -1,23 +1,38 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import { connect } from 'react-redux'
 import Note from './Note'
 import { Card } from 'semantic-ui-react'
 
 const NotesContainer = (props) => {
 
-  const renderNotes = () => {
-    if (props.notes.length > 0) {
-      return props.notes.map(note => {
-        return <Note {...note} key={note.id} />
-      })
-    }
-  }
+  const [loading, setLoading] = useState(true)
+  const [notes, setNotes] = useState([])
+ 
+  useEffect(() => {
+   console.log(props,"pre");
+   if (props.notes.loading === false) {
+     setNotes(props.notes.notes) 
+     setLoading(false)
+     
+   }
+  },[props.notes])
+
+  // const renderNotes = () => {
+  //   if (props.notes.length > 0) {
+  //     return props.notes.map(note => {
+  //       return <Note {...note} key={note.id} />
+  //     })
+  //   }
+  // }
 
     return (
       <div>
-        <h1 className="notes-header">{ props.notes.length === 0 ? `${props.user.username}'s Notes` : "Click New Note to create a note." }</h1>
+        <h1 className="notes-header">{ loading ? null  : `${props.user.username}'s Notes` }</h1>
         <Card.Group className="notes-container">
-          { renderNotes() }
+          { loading ? null : notes.map(note => {
+            return <Note {...note} key={note.id} />
+          }) 
+          }
         </Card.Group>
       </div>
     );
@@ -27,7 +42,7 @@ const NotesContainer = (props) => {
 const mapStateToProps = (state) => {
   return {
     notes: state.notes,
-    user: state.user
+    user: state.user.user
   }
 }
 

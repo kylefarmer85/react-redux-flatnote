@@ -18,22 +18,36 @@ const notesReducer = (state = { notes: [], loading: false }, action) => {
       }  
 
 
-    // case 'LOGIN_SUCCESS':
-    //   return action.data.notes
 
     case 'ADD_NOTE':
-      return [...state, action.note]
+      return {
+        ...state, 
+        notes: [...state.notes, action.note],
+        loading: false
+      }
 
     case 'UPDATE_NOTE':
-      updatedNotes = state.map(n => n.id === action.note.id ? action.note : n)
-      return updatedNotes   
+      updatedNotes = state.notes.map(n => n.id === action.note.id ? action.note : n)
+      return {
+        ...state,
+        notes: updatedNotes,
+        loading: false
+      }  
     
     case 'DELETE_NOTE':
-      updatedNotes = state.filter(note => note.id !== action.id)
-      return updatedNotes
+      updatedNotes = state.notes.filter(note => note.id !== action.id)
+      return {
+        ...state,
+        notes: updatedNotes,
+        loading: false
+      }
 
     case 'LOGOUT_USER':
-      return []  
+      return {
+        ...state,
+        notes: [],
+        loading: true
+      }  
 
     default:
       return state
