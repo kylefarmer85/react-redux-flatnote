@@ -6,8 +6,8 @@
   background-image: url("./images/paperclip.jpg");
   background-repeat: no-repeat;
   background-size: contain;
-  min-height: 500px;
-  min-width: 500px;
+  min-height: 400px;
+  min-width: 400px;
   background-position: 50%;
 }
 
