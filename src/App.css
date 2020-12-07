@@ -2,6 +2,20 @@
   text-align: center;
 }
 
+.paperclip-note {
+  background-image: url("./images/paperclip.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  min-height: 500px;
+  min-width: 500px;
+  background-position: 50%;
+}
+
+.login-form {
+  padding: 13% 40%;
+  text-align: left;
+}
+
 .notes-header {
   padding: 2%
 }
@@ -46,7 +60,6 @@
   padding: 2% 7%;
 }
 
-
 .note-buttons {
   padding-top: 27%;
 }
@@ -55,19 +68,7 @@
   margin: 5% 20%;
 }
 
-.paperclip-note {
-  background-image: url("./images/paperclip.jpg");
-  background-repeat: no-repeat;
-  background-size: contain;
-  min-height: 500px;
-  min-width: 500px;
-  background-position: 50%;
-}
 
-.login-form {
-  padding: 10% 40%;
-  text-align: left;
-}
 
 /* @media (max-width: 500px) {
   .note-image {
