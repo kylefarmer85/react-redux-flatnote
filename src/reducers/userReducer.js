@@ -1,4 +1,4 @@
-const userReducer = (state = { user: null, loading: false}, action) => {
+const userReducer = (state = { user: null, loading: true}, action) => {
   switch(action.type) {
 
     case 'START_ADDING_USER_REQUEST':

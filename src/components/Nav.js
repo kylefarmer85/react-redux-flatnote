@@ -9,11 +9,11 @@ const Nav = (props) => {
 
   return (
     <Menu stackable fluid widths={3}>
-        <Menu.Item style={{color: "grey"}} as={Link} to={`/notes`} header name="FLATNOTE"/>
+        <Menu.Item icon="signup" style={{color: "grey"}} as={Link} to={`/notes`} header name="FLATNOTE"/>
 
-        <Menu.Item as={Link} to={`/notes/new`} name="New Note" />
+        <Menu.Item icon="pencil alternate" as={Link} to={`/notes/new`} name="New Note" />
 
-        <Menu.Item onClick={props.logoutUser} as={Link} to={`/login`} name="Signout" />
+        <Menu.Item icon="sign-out" onClick={props.logoutUser} as={Link} to={`/login`} name="Signout" />
     </Menu>
   );
 }

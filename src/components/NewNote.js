@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Form } from 'semantic-ui-react'
+import { Button, Form, Header } from 'semantic-ui-react'
 import { connect } from 'react-redux'
 import { addNote } from '../actions/notes'
 
@@ -47,7 +47,7 @@ class NewNote extends Component {
   render() {
     return (
     <Form className='new-note-form' onSubmit={this.handleSubmit}>
-      <h1>New Note</h1>
+      <Header as='h1'>New Note</Header>
       <Form.Field label="Note Title" control="input" name="title" value={this.state.title} onChange={this.handleChange}/>
       <Form.Field label='Note Content' control="textarea" name="content" value={this.state.content} onChange={this.handleChange}/>
       <Button primary type='submit'>Submit</Button>

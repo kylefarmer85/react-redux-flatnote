@@ -1,4 +1,4 @@
-const notesReducer = (state = { notes: [], loading: false }, action) => {
+const notesReducer = (state = { notes: [], loading: true }, action) => {
 
   let updatedNotes;
 

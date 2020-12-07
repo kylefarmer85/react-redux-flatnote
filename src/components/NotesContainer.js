@@ -15,7 +15,7 @@ const NotesContainer = (props) => {
 
   return (
     <div>
-      <h1 className="notes-header">{ props.notes.loading ? null  : `${props.user.username}'s Notes` }</h1>
+      <h1 className="notes-header">{ props.notes.loading ? "please login"  : `${props.user.username}'s notes` }</h1>
       <Card.Group className="notes-container">
         { props.notes.loading ? null : notes.map(note => {
           return <Note {...note} key={note.id} />

@@ -13,10 +13,10 @@ import { connect } from 'react-redux'
 class App extends Component {
 
   componentDidMount(){
-    
-   if (this.props.user === null) {
+
+   if (!this.props.user) {
      console.log(this.props.user)
-    this.props.history.push("/login")
+    return this.props.history.push('/login')
    } else {
      console.log(this.props.user)
      return
@@ -32,7 +32,7 @@ class App extends Component {
             <Route exact path ='/notes/new' component={NewNote}/>
             <Route exact path ='/notes/:id'component={NoteShow} />
             <Route exact path ='/notes/:id/edit' component={EditNote} />
-            <Route path ='/login' component={Login} />
+            <Route path ='/' component={Login} />
           </Switch> 
       </div>
     );
