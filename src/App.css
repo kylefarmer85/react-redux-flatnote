@@ -2,30 +2,29 @@
   text-align: center;
 }
 
-/* nav {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  min-height: 7vh;
-  background: rgb(0, 0, 0);
-  color:white
-}
-
-.nav-links {
-  width: 50%;
-  display: flex;
-  justify-content: space-around;
-  list-style: none;
-  color: white;
-} */
-
 .notes-header {
   padding: 2%
 }
 
 .notes-container {
-  padding-top: 2%;
-  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  outline: solid;
+  margin: 2%;
+}
+
+.color-note {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  height: 300px;
+  width: 300px;
+  outline: solid;
+}
+
+.inner-note {
+  padding-top: 30%;
 }
 
 .note-image {
