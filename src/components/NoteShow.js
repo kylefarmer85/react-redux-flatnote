@@ -52,9 +52,9 @@ class NoteShow extends Component {
         <h1>{note.title}</h1>
         <p>{note.content}</p>
         <div className='note-buttons'>
-          <Button primary as={Link} to={`/notes/${note.id}/edit`}>Edit</Button>
-          <Button secondary onClick={() => this.handleDelete(note.id)}>Delete</Button>
-          <Button as={Link} to={'/notes'}>All Notes</Button>
+          <Button basic as={Link} to={`/notes/${note.id}/edit`}>Edit</Button>
+          <Button basic onClick={() => this.handleDelete(note.id)}>Delete</Button>
+          <Button basic as={Link} to={'/notes'}>All Notes</Button>
         </div>
       </div>
     </div>  

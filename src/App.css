@@ -10,7 +10,6 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  outline: solid;
   margin: 2%;
 }
 
@@ -20,11 +19,16 @@
   background-position: 50%;
   height: 300px;
   width: 300px;
-  outline: solid;
 }
 
 .inner-note {
+  font-family: cursive;
+  font-style: italic;
   padding-top: 30%;
+}
+
+.inner-buttons {
+  padding-top: 10%;
 }
 
 .note-image {
@@ -51,9 +55,18 @@
   margin: 5% 20%;
 }
 
+.paperclip-note {
+  background-image: url("./images/paperclip.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  min-height: 500px;
+  min-width: 500px;
+  background-position: 50%;
+}
+
 .login-form {
-  margin: 10% 35%;
-  text-align: left
+  padding: 10% 40%;
+  text-align: left;
 }
 
 /* @media (max-width: 500px) {
