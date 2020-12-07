@@ -9,7 +9,7 @@ import NewNote from './components/NewNote'
 import EditNote from './components/EditNote'
 import Signup from './components/Signup'
 import { connect } from 'react-redux'
-
+import { currentUser } from './actions/user'
 
 class App extends Component {
 
@@ -27,7 +27,7 @@ class App extends Component {
         }
       }
 
-      fetch('http://localhost:5000/api/v1/current_user', reqObj)
+      fetch('http://localhost:3000/api/v1/current_user', reqObj)
       .then(resp => resp.json())
       .then(data => {
         this.props.currentUser(data)
@@ -52,10 +52,10 @@ class App extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
-  return {
-    user: state.user.user
-  }
-}
+// const mapStateToProps = (state) => {
+//   return {
+//     user: state.user.user
+//   }
+// }
 
-export default connect(mapStateToProps, null)(withRouter(App));
+export default connect(null,{ currentUser })(withRouter(App));

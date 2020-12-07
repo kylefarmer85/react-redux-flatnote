@@ -4,6 +4,13 @@ export const logoutUser = () => {
   }
 }
 
+export const currentUser = (data) => {
+  return {
+    type: 'CURRENT_USER',
+    data
+  }
+}
+
 export function fetchUser(user, password) {
   return(dispatch) => {
     dispatch({type: 'START_ADDING_USER_REQUEST'})
