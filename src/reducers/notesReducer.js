@@ -17,6 +17,13 @@ const notesReducer = (state = { notes: [], loading: true }, action) => {
         loading: false
       }  
 
+    case 'CURRENT_USER':
+      return {
+        ...state,
+        notes: action.data.notes,
+        loading: false
+      }    
+
     case 'ADD_NOTE':
       return {
         ...state, 

@@ -9,9 +9,11 @@ const NotesContainer = (props) => {
       <h1 className="notes-header">{ props.notes.loading ? "Loading..."  : `${props.user.username}'s notes` }</h1>
 
       <div className="notes-container">
-        { props.notes.loading ? null : props.notes.notes.map(note => {
+        { props.notes.loading ? null : 
+        props.notes.notes.length > 0 ?
+        props.notes.notes.map(note => {
           return <Note {...note} key={note.id} />
-        }) 
+        }) : "You have 0 notes."
         }
       </div>
     </div>

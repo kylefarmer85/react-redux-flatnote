@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchUser } from '../actions/user'
+import { signupUser } from '../actions/user'
 import { Form, Button } from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
 
-
-class Login extends Component {
+class Signup extends Component {
     state = {
       username: '',
       password: ''  
@@ -15,6 +14,7 @@ class Login extends Component {
     this.setState({
       [e.target.name]: e.target.value
     })
+
   }
 
   handleSubmit = (e) => {
@@ -24,7 +24,7 @@ class Login extends Component {
         username: prevState.username.split(' ').join('').toLowerCase
       }
     })
-    this.props.fetchUser(this.state.username, this.state.password)
+    this.props.signupUser(this.state.username, this.state.password)
 
     this.props.history.push('/notes')
     this.setState({
@@ -37,11 +37,11 @@ class Login extends Component {
     return (
     <div className="paperclip-note">
       <Form className="login-form" onSubmit={this.handleSubmit}>
-        <h1 id="flatnote-header">Welcome to FLATNOTE</h1>
-        <Form.Field label="User Login" placeholder="Username" control="input" name="username" value={this.state.username} onChange={this.handleChange} />
+        <h1 id="flatnote-header">FLATNOTE Signup</h1>
+        <Form.Field label="Enter a Username and Password" placeholder="Username" control="input" name="username" value={this.state.username} onChange={this.handleChange} />
         <Form.Field placeholder="Password" control="input" name="password" value={this.state.password} onChange={this.handleChange} />
-        <Button primary type='submit'>Login</Button>
-        <Button as={Link} to={'/signup'}>or Sign Up</Button>
+        <Button primary type='submit'>Signup</Button>
+        <Button as={Link} to={'/login'}>Back</Button>
       </Form> 
     </div>    
     );
@@ -55,8 +55,8 @@ class Login extends Component {
 // }
 
 function mapDispatchToProps(dispatch){
-  return { fetchUser: (user, password) => dispatch(fetchUser(user, password)) }
+  return { signupUser: (user, password) => dispatch(signupUser(user, password)) }
 }
 
 
-export default connect(null, mapDispatchToProps) (Login);
+export default connect(null, mapDispatchToProps) (Signup);
