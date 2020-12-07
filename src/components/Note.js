@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 
 const Note = (props) => {
   const {id, title, content} = props
-  // useHistory just to try it out 
+
   const history = useHistory()
 
   return (
