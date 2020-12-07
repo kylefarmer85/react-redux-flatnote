@@ -3,6 +3,9 @@ import { Button, Form, Header } from 'semantic-ui-react'
 import { connect } from 'react-redux'
 import { addNote } from '../actions/notes'
 
+const noteImages = ['../images/blue.png', '../images/orange.jpg', '../images/green.jpg', '../images/pink.png', '../images/yellow.jpg']
+
+const randomNoteColor = noteImages[Math.floor(Math.random() * noteImages.length)]
 
 class NewNote extends Component {
   constructor(){
@@ -31,7 +34,7 @@ class NewNote extends Component {
       body: JSON.stringify({
         title: this.state.title,
         content: this.state.content,
-        user_id: this.props.user.id
+        user_id: this.props.user.id,
       })
     }
 
