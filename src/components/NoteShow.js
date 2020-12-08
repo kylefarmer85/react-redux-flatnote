@@ -54,7 +54,7 @@ class NoteShow extends Component {
         <div className='note-buttons'>
           <Button basic as={Link} to={`/notes/${note.id}/edit`}>Edit</Button>
           <Button basic onClick={() => this.handleDelete(note.id)}>Delete</Button>
-          <Button basic as={Link} to={'/notes'}>All Notes</Button>
+          <Button basic as={Link} to={'/notes'}>Back to Notes</Button>
         </div>
       </div>
     </div>  

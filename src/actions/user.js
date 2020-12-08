@@ -54,8 +54,12 @@ export function signupUser(user, password) {
     fetch("http://localhost:3000/api/v1/users", reqObj)
     .then(resp => resp.json())
     .then(data => {
+      if (data.error) {
+        alert(data.error)
+      } else {
       dispatch({ type: "LOGIN_USER", data})
       localStorage.setItem('my_app_token', data.token)
-      })
+      }
+    })
   }
 }

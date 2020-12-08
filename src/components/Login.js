@@ -39,9 +39,9 @@ class Login extends Component {
       <Form className="login-form" onSubmit={this.handleSubmit}>
         <h1 id="flatnote-header">Welcome to FLATNOTE</h1>
         <Form.Field label="User Login" placeholder="Username" control="input" name="username" value={this.state.username} onChange={this.handleChange} />
-        <Form.Field placeholder="Password" control="input" name="password" value={this.state.password} onChange={this.handleChange} />
+        <Form.Field placeholder="Password" type="password" control="input" name="password" value={this.state.password} onChange={this.handleChange} />
         <Button primary type='submit'>Login</Button>
-        <Button as={Link} to={'/signup'}>or Sign Up</Button>
+        <Button as={Link} to={'/signup'}>or Signup</Button>
       </Form> 
     </div>    
     );
