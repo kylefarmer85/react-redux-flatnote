@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router } from 'react-router-dom'
+import { Router } from 'react-router-dom'
 import { Provider } from 'react-redux'
 import { createStore, applyMiddleware } from 'redux'
 import rootReducer from './reducers/index'
@@ -9,6 +9,7 @@ import thunk from 'redux-thunk'
 import App from './App';
 import './index.css';
 import 'semantic-ui-css/semantic.min.css'
+import history from './history'
 
 const middleware = [
   thunk
@@ -19,7 +20,7 @@ let store = createStore(rootReducer, composeWithDevTools(applyMiddleware(...midd
 
 ReactDOM.render(
   <Provider store={store}>
-    <Router>
+    <Router history={history}>
       <App />
     </Router>
   </Provider>,

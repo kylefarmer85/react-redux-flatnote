@@ -1,3 +1,5 @@
+import history from '../history'
+
 export const logoutUser = () => {
   return {
     type: 'LOGOUT_USER'
@@ -29,9 +31,14 @@ export function fetchUser(user, password) {
     fetch("http://localhost:3000/api/v1/auth", reqObj)
     .then(resp => resp.json())
     .then(data => {
-      dispatch({ type: "LOGIN_USER", data})
-      localStorage.setItem('my_app_token', data.token)
-      })
+      if (data.error) {
+        history.push('/login')
+        alert(data.error)
+      } else {
+        dispatch({ type: "LOGIN_USER", data})
+        localStorage.setItem('my_app_token', data.token)
+      }
+    })
   }
 }
 
@@ -55,6 +62,7 @@ export function signupUser(user, password) {
     .then(resp => resp.json())
     .then(data => {
       if (data.error) {
+        history.push('/login')
         alert(data.error)
       } else {
       dispatch({ type: "LOGIN_USER", data})

@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchUser, signupUser } from '../actions/user'
 import { Form, Button } from 'semantic-ui-react'
-import { Link } from 'react-router-dom'
 
 
 class Login extends Component {
