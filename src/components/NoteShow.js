@@ -3,7 +3,19 @@ import { Link } from 'react-router-dom'
 import { Button } from 'semantic-ui-react'
 import { connect } from 'react-redux'
 import { deleteNote } from '../actions/notes'
+import blue from '../images/blue.png'
+import orange from '../images/orange.jpeg'
+import pink from '../images/pink.png'
+import teal from '../images/teal.png'
+import orange2 from '../images/orange2.jpeg'
+import green from '../images/green.jpg'
+import yellow from '../images/yellow.jpg'
 
+
+const randomNoteColor = () => {
+  const noteImages = [blue, green, yellow, orange, orange2, teal, pink]
+  return noteImages[Math.floor(Math.random() * noteImages.length)]
+}
 
 class NoteShow extends Component {
   constructor(props){
@@ -47,14 +59,14 @@ class NoteShow extends Component {
   render() {
     const note = this.state.note
     return (
-    <div className='note-image'>
+    <div className='note-image' style={{backgroundImage:`url(${randomNoteColor()})`}}>
       <div className="note-show">
         <h1>{note.title}</h1>
         <p>{note.content}</p>
         <div className='note-buttons'>
           <Button basic as={Link} to={`/notes/${note.id}/edit`}>Edit</Button>
           <Button basic onClick={() => this.handleDelete(note.id)}>Delete</Button>
-          <Button basic as={Link} to={'/notes'}>All Notes</Button>
+          <Button basic as={Link} to={'/notes'}>Back to Notes</Button>
         </div>
       </div>
     </div>  

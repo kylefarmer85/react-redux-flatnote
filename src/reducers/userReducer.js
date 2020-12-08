@@ -15,6 +15,13 @@ const userReducer = (state = { user: null, loading: true}, action) => {
         loading: false
       }  
 
+    case 'CURRENT_USER':
+      return {
+        ...state,
+        user: action.data.user,
+        loading: false
+      }  
+
     case 'LOGOUT_USER':
       return {
         ...state,

@@ -7,13 +7,18 @@ import { Menu } from 'semantic-ui-react'
 
 const Nav = (props) => {
 
+  const handleLogout = () => {
+    localStorage.removeItem('my_app_token')
+    props.logoutUser()
+  }
+
   return (
     <Menu stackable fluid widths={3}>
-        <Menu.Item icon="signup" style={{color: "grey"}} as={Link} to={`/notes`} header name="FLATNOTE"/>
+        <Menu.Item icon="signup" style={{color: "grey"}} header name="FLATNOTE"/>
 
         <Menu.Item icon="pencil alternate" as={Link} to={`/notes/new`} name="New Note" />
 
-        <Menu.Item icon="sign-out" onClick={props.logoutUser} as={Link} to={`/login`} name="Signout" />
+        <Menu.Item icon="sign-out" onClick={handleLogout} as={Link} to={`/login`} name="Signout" />
     </Menu>
   );
 }

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Button, Form } from 'semantic-ui-react'
 import { connect } from 'react-redux'
 import { updateNote } from '../actions/notes'
+import { Link } from 'react-router-dom'
 
 
 class EditNote extends Component {
@@ -70,6 +71,7 @@ class EditNote extends Component {
       <Form.Field label="Note Title" control="input" name="title" value={this.state.title} onChange={this.handleChange}/>
       <Form.Field label='Note Content' control="textarea" name="content" value={this.state.content} onChange={this.handleChange}/>
       <Button primary type='submit'>Update</Button>
+      <Button as={Link} to={`/notes`}>Back to Notes</Button>
     </Form>
     );
   }

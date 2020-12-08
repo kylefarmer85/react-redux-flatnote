@@ -2,10 +2,8 @@ import React, { Component } from 'react';
 import { Button, Form, Header } from 'semantic-ui-react'
 import { connect } from 'react-redux'
 import { addNote } from '../actions/notes'
+import { Link } from 'react-router-dom'
 
-const noteImages = ['../images/blue.png', '../images/orange.jpg', '../images/green.jpg', '../images/pink.png', '../images/yellow.jpg']
-
-const randomNoteColor = noteImages[Math.floor(Math.random() * noteImages.length)]
 
 class NewNote extends Component {
   constructor(){
@@ -16,6 +14,12 @@ class NewNote extends Component {
     }
   }
 
+  componentDidMount() {
+    const token = localStorage.getItem('my_app_token')
+    if (!token) {
+      this.props.history.push('/login')
+    }
+  }
 
   handleChange = (e) => {
     this.setState({
@@ -53,7 +57,8 @@ class NewNote extends Component {
       <Header as='h1'>New Note</Header>
       <Form.Field label="Note Title" control="input" name="title" value={this.state.title} onChange={this.handleChange}/>
       <Form.Field label='Note Content' control="textarea" name="content" value={this.state.content} onChange={this.handleChange}/>
-      <Button primary type='submit'>Submit</Button>
+      <Button disabled={!this.state.title || !this.state.content} primary type='submit'>Submit</Button>
+      <Button as={Link} to={`/notes`}>Back to Notes</Button>
     </Form>
     );
   }

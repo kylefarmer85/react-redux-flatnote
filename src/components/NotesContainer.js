@@ -2,16 +2,20 @@ import React from 'react';
 import { connect } from 'react-redux'
 import Note from './Note'
 
+
+
 const NotesContainer = (props) => {
 
   return (
     <div>
-      <h1 className="notes-header">{ props.notes.loading ? "Loading..."  : `${props.user.username}'s notes` }</h1>
+      <h2 className="notes-header">{ props.notes.loading ? "Loading..."  : `${props.user.username}'s notes` }</h2>
 
       <div className="notes-container">
-        { props.notes.loading ? null : props.notes.notes.map(note => {
+        { props.notes.loading ? null : 
+        props.notes.notes.length > 0 ?
+        props.notes.notes.map(note => {
           return <Note {...note} key={note.id} />
-        }) 
+        }) : "You have 0 notes."
         }
       </div>
     </div>

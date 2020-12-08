@@ -7,20 +7,32 @@ import Login from './components/Login'
 import NoteShow from './components/NoteShow'
 import NewNote from './components/NewNote'
 import EditNote from './components/EditNote'
+import Signup from './components/Signup'
 import { connect } from 'react-redux'
-
+import { currentUser } from './actions/user'
 
 class App extends Component {
 
   componentDidMount(){
+    const token = localStorage.getItem('my_app_token')
+    
+    if (!token) {
+      this.props.history.push('/login')
+    } else {
 
-   if (!this.props.user) {
-     console.log(this.props.user)
-    return this.props.history.push('/login')
-   } else {
-     console.log(this.props.user)
-     return
-   }
+      const reqObj = {
+        method: 'GET',
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      }
+
+      fetch('http://localhost:3000/api/v1/current_user', reqObj)
+      .then(resp => resp.json())
+      .then(data => {
+        this.props.currentUser(data)
+      })
+    }
   }
 
   render(){
@@ -32,6 +44,7 @@ class App extends Component {
             <Route exact path ='/notes/new' component={NewNote}/>
             <Route exact path ='/notes/:id'component={NoteShow} />
             <Route exact path ='/notes/:id/edit' component={EditNote} />
+            <Route exact path ='/signup' component={Signup} />
             <Route path ='/' component={Login} />
           </Switch> 
       </div>
@@ -39,10 +52,10 @@ class App extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
-  return {
-    user: state.user.user
-  }
-}
+// const mapStateToProps = (state) => {
+//   return {
+//     user: state.user.user
+//   }
+// }
 
-export default connect(mapStateToProps, null)(withRouter(App));
+export default connect(null,{ currentUser })(withRouter(App));
