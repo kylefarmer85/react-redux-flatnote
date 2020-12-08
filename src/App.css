@@ -33,13 +33,16 @@
   background-position: 50%;
   min-height: 300px;
   min-width: 300px;
-  
 }
 
 .inner-note {
   font-family: cursive;
   font-style: italic;
   padding-top: 30%;
+}
+
+.inner-note p {
+  font-size: 16px;
 }
 
 .inner-buttons {
@@ -57,7 +60,14 @@
 }
 
 .note-show {
+  font-family: cursive;
+  font-style: italic;
   padding: 2% 7%;
+
+}
+
+.note-show p {
+  font-size: 18px;
 }
 
 .note-buttons {

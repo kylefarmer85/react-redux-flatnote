@@ -6,9 +6,9 @@ import blue from '../images/blue.png'
 import orange from '../images/orange.jpeg'
 import pink from '../images/pink.png'
 import teal from '../images/teal.png'
+import yellow from '../images/yellow.jpg'
 import orange2 from '../images/orange2.jpeg'
 import green from '../images/green.jpg'
-import yellow from '../images/yellow.jpg'
 
 
 const randomNoteColor = () => {
