@@ -6,14 +6,17 @@
   background-image: url("./images/paperclip.jpg");
   background-repeat: no-repeat;
   background-size: contain;
-  min-height: 400px;
-  min-width: 400px;
+  min-height: 350px;
+  min-width: 350px;
   background-position: 50%;
 }
 
 .login-form {
-  padding: 13% 40%;
+  margin: auto;
+  padding: 9em 7em;
   text-align: left;
+  box-sizing: border-box;
+  width: 30em;
 }
 
 .notes-header {
@@ -38,7 +41,7 @@
 .inner-note {
   font-family: cursive;
   font-style: italic;
-  padding-top: 30%;
+  padding-top: 27%;
 }
 
 .inner-note p {
