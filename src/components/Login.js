@@ -60,7 +60,7 @@ class Login extends Component {
 
         <Button disabled={!this.state.username || !this.state.password} primary type='submit'>Login</Button>
         <Button disabled={!this.state.username || !this.state.password} onClick={this.handleSignup}>Signup</Button>
-
+       
       </Form> 
     </div>    
     );
