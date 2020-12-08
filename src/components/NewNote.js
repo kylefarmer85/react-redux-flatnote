@@ -57,7 +57,7 @@ class NewNote extends Component {
       <Header as='h1'>New Note</Header>
       <Form.Field label="Note Title" control="input" name="title" value={this.state.title} onChange={this.handleChange}/>
       <Form.Field label='Note Content' control="textarea" name="content" value={this.state.content} onChange={this.handleChange}/>
-      <Button primary type='submit'>Submit</Button>
+      <Button disabled={!this.state.title || !this.state.content} primary type='submit'>Submit</Button>
       <Button as={Link} to={`/notes`}>Back to Notes</Button>
     </Form>
     );

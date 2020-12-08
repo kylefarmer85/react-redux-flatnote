@@ -40,7 +40,7 @@ class Signup extends Component {
         <h1 id="flatnote-header">FLATNOTE Signup</h1>
         <Form.Field label="Enter a Username and Password" placeholder="Username" control="input" name="username" value={this.state.username} onChange={this.handleChange} />
         <Form.Field placeholder="Password" type="password" control="input" name="password" value={this.state.password} onChange={this.handleChange} />
-        <Button primary type='submit'>Signup</Button>
+        <Button disabled={!this.state.username || !this.state.password} primary type='submit'>Signup</Button>
         <Button as={Link} to={'/login'}>Back</Button>
       </Form> 
     </div>    
