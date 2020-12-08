@@ -6,8 +6,8 @@
   background-image: url("./images/paperclip.jpg");
   background-repeat: no-repeat;
   background-size: contain;
-  min-height: 350px;
-  min-width: 350px;
+  min-height: 325px;
+  min-width: 325px;
   background-position: 50%;
 }
 
@@ -27,15 +27,15 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  margin: 0%;
+  margin: 0% 2%;
 }
 
 .color-note {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: 50%;
-  min-height: 300px;
-  min-width: 300px;
+  min-height: 275px;
+  min-width: 275px;
 }
 
 .inner-note {
@@ -53,20 +53,19 @@
 }
 
 .note-image {
-  margin-top: 2%;
+  margin-top: 4%;
   padding: 13% 27% 10% 27%;
   background-repeat: no-repeat;
   background-position: 50%;
-  min-height: 200px;
-  min-width: 200px;
+  min-height: 00px;
+  min-width: 300px;
   background-size: contain;
 }
 
 .note-show {
   font-family: cursive;
   font-style: italic;
-  padding: 2% 7%;
-
+  padding: 3% 7%;
 }
 
 .note-show p {
@@ -83,8 +82,42 @@
 
 
 
-/* @media (max-width: 500px) {
-  .note-image {
+@media (max-width: 400px) {
+
+  .login-form {
+    margin: auto;
+    padding: 7em 5em;
+    text-align: left;
+    box-sizing: border-box;
+    width: 30em;
+  }
+
+  .login-form h1 {
     display: none;
   }
-} */
+
+  .note-image {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    min-height: 275px;
+    min-width: 275px;
+  }
+
+  .note-show p {
+    font-family: cursive;
+    font-style: italic;
+    font-size: 14px;
+  }
+
+
+  .note-show h1 {
+    font-family: cursive;
+    font-style: italic;
+    font-size: 16px;
+  }
+
+  .note-buttons {
+    padding-top: 0%;
+  }
+}
