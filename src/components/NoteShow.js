@@ -27,12 +27,14 @@ class NoteShow extends Component {
   }
 
   componentDidMount(){
+
     this.props.notes ? 
-    
+
     this.setState({
       note: this.props.notes.find(n => n.id === parseInt(this.state.id))
     })
     :
+
     fetch(`http://localhost:3000/api/v1/notes/${this.state.id}`)
     .then(resp => resp.json())
     .then(showNote => {
@@ -41,7 +43,6 @@ class NoteShow extends Component {
       })
     })
   }
-  
   
   handleDelete = (id) => {
     fetch(`http://localhost:3000/api/v1/notes/${id}`, {

@@ -34,6 +34,7 @@ export function fetchUser(user, password) {
       if (data.error) {
         history.push('/login')
         alert(data.error)
+
       } else {
         dispatch({ type: "LOGIN_USER", data})
         localStorage.setItem('my_app_token', data.token)
@@ -64,6 +65,7 @@ export function signupUser(user, password) {
       if (data.error) {
         history.push('/login')
         alert(data.error)
+
       } else {
       dispatch({ type: "LOGIN_USER", data})
       localStorage.setItem('my_app_token', data.token)

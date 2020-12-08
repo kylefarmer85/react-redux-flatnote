@@ -3,26 +3,22 @@ import { connect } from 'react-redux'
 import Note from './Note'
 import { Dimmer, Loader } from 'semantic-ui-react'
 
-
-
 const NotesContainer = (props) => {
 
   return (
     <div>
-      <h2 className="notes-header">{ props.notes.loading ? null  : `${props.user.username}'s notes` }</h2>
-
+      <h2 className="notes-header">{ props.loading ? null  : `${props.user.username}'s notes` }</h2>
       <div className="notes-container">
-        { props.notes.loading ? 
-          <div>
-            <Dimmer active inverted>
-              <Loader size='big' inverted content='Loading' />
-            </Dimmer>
-          </div>
+        { props.loading ? 
+          <Dimmer active inverted>
+            <Loader size='big' inverted content='Loading' />
+          </Dimmer>
         : 
-        props.notes.notes.length > 0 ?
-        props.notes.notes.map(note => {
+        props.notes.length > 0 ?
+        props.notes.map(note => {
           return <Note {...note} key={note.id} />
-        }) : "You have 0 notes."
+        }) 
+        : "You have 0 notes."
         }
       </div>
     </div>
@@ -32,7 +28,8 @@ const NotesContainer = (props) => {
 const mapStateToProps = (state) => {
   return {
     notes: state.notes,
-    user: state.user.user
+    user: state.user,
+    loading: state.loading
   }
 }
 

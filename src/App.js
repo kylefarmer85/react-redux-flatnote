@@ -7,7 +7,6 @@ import Login from './components/Login'
 import NoteShow from './components/NoteShow'
 import NewNote from './components/NewNote'
 import EditNote from './components/EditNote'
-import Signup from './components/Signup'
 import { connect } from 'react-redux'
 import { currentUser } from './actions/user'
 
@@ -44,7 +43,6 @@ class App extends Component {
             <Route exact path ='/notes/new' component={NewNote}/>
             <Route exact path ='/notes/:id'component={NoteShow} />
             <Route exact path ='/notes/:id/edit' component={EditNote} />
-            <Route exact path ='/signup' component={Signup} />
             <Route path ='/' component={Login} />
           </Switch> 
       </div>
