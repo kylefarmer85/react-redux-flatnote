@@ -11,10 +11,6 @@ import green from '../images/green.jpg'
 import yellow from '../images/yellow.jpg'
 
 
-
-
-
-
 const randomNoteColor = () => {
   const noteImages = [blue, green, yellow, orange, orange2, teal, pink]
   return noteImages[Math.floor(Math.random() * noteImages.length)]

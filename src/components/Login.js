@@ -52,29 +52,21 @@ class Login extends Component {
     return (
     <div className="paperclip-note">
       <Form className="login-form" onSubmit={this.handleSubmit}>
+
         <h1 id="flatnote-header">Welcome to FLATNOTE</h1>
-        <Form.Field label="User Login" placeholder="Username" control="input" name="username" value={this.state.username} onChange={this.handleChange} />
+
+        <Form.Field label="User Login / Signup" placeholder="Username" control="input" name="username" value={this.state.username} onChange={this.handleChange} />
+
         <Form.Field placeholder="Password" type="password" control="input" name="password" value={this.state.password} onChange={this.handleChange} />
+
         <Button disabled={!this.state.username || !this.state.password} primary type='submit'>Login</Button>
-        <Button disabled={!this.state.username || !this.state.password} onClick={this.handleSignup}>or Signup</Button>
+        <Button disabled={!this.state.username || !this.state.password} onClick={this.handleSignup}>Signup</Button>
+
       </Form> 
     </div>    
     );
   }
 }
 
-// const mapStateToProps = (state) => {
-//   return {
-//     user: state.user
-//   }
-// }
-
-// function mapDispatchToProps(dispatch){
-//   return { fetchUser: (user, password) => dispatch(fetchUser(user, password)) }
-// }
-
-// function mapDispatchToProps(dispatch){
-//   return { signupUser: (user, password) => dispatch(signupUser(user, password)) }
-// }
 
 export default connect(null, {fetchUser, signupUser}) (Login);

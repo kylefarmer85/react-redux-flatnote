@@ -49,7 +49,6 @@
 .note-image {
   margin-top: 2%;
   padding: 13% 27% 10% 27%;
-  background-image: url("./images/sticky.png");
   background-repeat: no-repeat;
   background-position: 50%;
   min-height: 200px;
@@ -62,7 +61,7 @@
 }
 
 .note-buttons {
-  padding-top: 27%;
+  padding-top: 23%;
 }
 
 .edit-note-form, .new-note-form {
