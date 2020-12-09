@@ -10,6 +10,7 @@ import EditNote from './components/EditNote'
 import { connect } from 'react-redux'
 import { currentUser } from './actions/user'
 
+
 class App extends Component {
 
   componentDidMount(){
@@ -49,11 +50,5 @@ class App extends Component {
     );
   }
 }
-
-// const mapStateToProps = (state) => {
-//   return {
-//     user: state.user.user
-//   }
-// }
 
 export default connect(null,{ currentUser })(withRouter(App));

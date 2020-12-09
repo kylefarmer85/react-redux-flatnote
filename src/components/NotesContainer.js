@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux'
 import Note from './Note'
-import { Dimmer, Loader } from 'semantic-ui-react'
+import Loading from './Loading'
 
 const NotesContainer = (props) => {
 
@@ -9,16 +9,16 @@ const NotesContainer = (props) => {
     <div>
       <h2 className="notes-header">{ props.loading ? null  : `${props.user.username}'s notes` }</h2>
       <div className="notes-container">
-        { props.loading ? 
-          <Dimmer active inverted>
-            <Loader size='big' inverted content='Loading' />
-          </Dimmer>
-        : 
-        props.notes.length > 0 ?
-        props.notes.map(note => {
-          return <Note {...note} key={note.id} />
-        }) 
-        : "You have 0 notes."
+        { 
+          props.loading ? 
+          <Loading />
+          : 
+          props.notes.length > 0 ?
+          props.notes.map(note => {
+            return <Note {...note} key={note.id} />
+          }) 
+          : 
+          "You have 0 notes."
         }
       </div>
     </div>
