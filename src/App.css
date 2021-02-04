@@ -3,7 +3,7 @@
 }
 
 .paperclip-note {
-  background-image: url("./images/paperclip.jpg");
+  background-image: url('./images/paperclip.jpg');
   background-repeat: no-repeat;
   background-size: contain;
   min-height: 325px;
@@ -20,7 +20,7 @@
 }
 
 .notes-header {
-  padding: 1%
+  padding: 1%;
 }
 
 .notes-container {
@@ -76,14 +76,12 @@
   padding-top: 23%;
 }
 
-.edit-note-form, .new-note-form {
+.edit-note-form,
+.new-note-form {
   margin: 5% 20%;
 }
 
-
-
 @media (max-width: 400px) {
-
   .login-form {
     margin: auto;
     padding: 7em 5em;
@@ -111,7 +109,6 @@
     font-size: 14px;
     padding-bottom: 4%;
   }
-
 
   .note-show h1 {
     font-style: italic;
